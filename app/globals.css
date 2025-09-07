@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "BoldPixels";
+  src: url("/fonts/BoldPixels.ttf") format("truetype");
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'BoldPixels', sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.header-animation {
+  @apply bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+}
+
+h4 {
+  @apply text-xl md:text-2xl lg:text-3xl font-semibold;
+}
+
+h5 {
+  @apply text-lg md:text-xl lg:text-2xl font-medium;
+}
+
+h6 {
+  @apply text-base md:text-lg lg:text-xl font-medium;
+}
+
+p {
+  @apply text-base font-[Helvetica];
+}
+
+a {
+  @apply text-blue-600 hover:underline;
+}
+
+button {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+
+input, textarea {
+  @apply border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+code {
+  @apply bg-gray-100 text-red-600 font-mono px-1 rounded;
+}
+
+pre {
+  @apply bg-gray-100 p-4 rounded overflow-x-auto;
+}
+
+
+/* Specifics */
+nav p {
+  @apply text-xl md:text-base lg:text-3xl font-[BoldPixels];
+}
+
+.selection-button {
+  @apply outline text-xl rounded-full flex justify-center items-center cursor-pointer bg-transparent px-4 py-2 m-2 transition-colors duration-200 hover:bg-orange-100;
+}
+
+.selection-button {
+  @apply outline text-xl rounded-full flex justify-center items-center cursor-pointer bg-transparent px-4 py-2 m-2 transition-all duration-200;
+}
+
+.selection-button:hover {
+  @apply bg-orange-100 outline-orange-300;
+}
+
+.selection-button.selected,
+.selection-button[data-selected="true"],
+.selection-button:active {
+  @apply bg-orange-500 text-white outline-orange-500 shadow-lg;
+}
+
+.selection-button.selected:hover,
+.selection-button[data-selected="true"]:hover {
+  @apply bg-orange-600;
+}
