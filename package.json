@@ -15,7 +15,7 @@
     "@neondatabase/serverless": "^1.0.1",
     "@tailwindcss/oxide": "^4.1.13",
     "mime": "^4.0.7",
-    "next": "15.5.2",
+    "next": "15.5.9",
     "next-auth": "5.0.0-beta.29",
     "react": "19.1.0",
     "react-dom": "19.1.0",
